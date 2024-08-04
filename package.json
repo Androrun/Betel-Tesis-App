@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon .",
-    "start": "node ."
+    "start": "node .",
+    "start:ngrok": "node start-ngrok.mjs",
+    "start:app": "concurrently \"npm start\" \"npm run start:ngrok\""
   },
   "keywords": [],
   "author": "",
@@ -20,11 +22,14 @@
     "jsonwebtoken": "^9.0.2",
     "md5": "^2.3.0",
     "morgan": "^1.10.0",
+    "ngrok": "^5.0.0-beta.2",
     "pg": "^8.11.5",
     "zod": "^3.23.7"
   },
   "devDependencies": {
+    "concurrently": "^7.2.0",
     "eslint": "^9.2.0",
     "nodemon": "^3.1.0"
   }
 }
+
